@@ -29,7 +29,11 @@
                 <td>{{ $address->contact_phone }}</td>
                 <td>
                   <a href="{{ route('user_addresses.edit', ['user_address' => $address->id]) }}" class="btn btn-primary">修改</a>
-                  <button class="btn btn-danger">删除</button>
+                  <form action="{{ route('user_addresses.destroy', ['user_address' => $address->id]) }}" method="post" style="display: inline-block">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button class="btn btn-danger" type="submit">删除</button>
+                  </form>
                 </td>
               </tr>
             @endforeach
