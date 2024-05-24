@@ -41,6 +41,16 @@ body {
   margin-top: 0px;
 }
 
+/* User register page */
+.register-page {
+  img.captcha {
+    cursor: pointer;
+    border: 1px solid #22C55E;
+    border-radius: 2px;
+    padding: 6px;
+  }
+}
+
 /* Sticky footer styles */
 html {
   position: relative;
