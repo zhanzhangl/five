@@ -42,4 +42,10 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // User 模型中关联上 UserAddress 模型
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
+    }
 }
