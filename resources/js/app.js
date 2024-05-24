@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+// import Vue from 'vue';
 
 /**
  * The following block of code may be used to automatically register your
@@ -24,6 +25,11 @@ window.Vue = require('vue').default;
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+// 此处需在引入 Vue 之后引入
+require('./components/SelectDistrict');
+
+require('./components/UserAddressesCreateAndEdit');
 
 const app = new Vue({
     el: '#app',
