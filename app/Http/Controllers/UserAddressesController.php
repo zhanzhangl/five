@@ -37,4 +37,26 @@ class UserAddressesController extends Controller
 
         return redirect()->route('user_addresses.index');
     }
+
+    // 用户收货地址编辑逻辑
+    public function edit(UserAddress $user_address)
+    {
+        return view('user_addresses.create_and_edit', ['address' => $user_address]);
+    }
+
+    // 用户收货地址更新逻辑
+    public function update(UserAddress $user_address, UserAddressRequest $request)
+    {
+        $user_address->update($request->only([
+            'province',
+            'city',
+            'district',
+            'address',
+            'zip',
+            'contact_name',
+            'contact_phone',
+        ]));
+
+        return redirect()->route('user_addresses.index');
+    }
 }
